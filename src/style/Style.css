@@ -1,0 +1,171 @@
+/* Main container that covers the full screen height */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.pincode-input-container {
+  text-align: center !important;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 👇 Add enough bottom padding to prevent content hiding */
+/* .with-bottom-padding {
+  padding-bottom: 57px;
+} */
+
+.full-page-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Global Styles */
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+
+}
+
+.bg-green {
+  background-color: #02C171 !important;
+}
+
+.bg-red {
+  background-color: #DD3535 !important;
+}
+
+.bg-yellow {
+  background-color: #E6B543 !important;
+}
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centers vertically */
+  align-items: center;
+  /* Centers horizontally */
+}
+
+.upper-section {
+  background-color: #1C3887;
+  height: 280px;
+  width: 100%;
+  position: relative;
+  /* Needed for absolute positioning inside */
+  padding: 10px;
+  color: white;
+}
+
+.bottom-right-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 250px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.below-section {
+  background-color: #ffff;
+  width: 100%;
+  /* Ensure it covers the full width */
+  border-radius: 20px 20px 0px 0px;
+  margin-top: -20px;
+  z-index: 4;
+}
+
+/* The signup card */
+.signup-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 375px;
+  /* Restrict the form width */
+  z-index: 1;
+  /* Ensure the card is above the background sections */
+}
+
+.logo-img {
+  width: 90px;
+  /* Set a specific width to make it small */
+  height: auto;
+  /* Maintain the aspect ratio */
+  max-width: 100%;
+  /* Ensure it fits within its container */
+}
+
+.secondary-back {
+  background-color: #F9F9F9;
+}
+
+/* h1, h2, h3, h4, h5 {
+  overflow-y: hidden;
+} */
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.whatsapp-button:hover {
+  background-color: #25d366;
+}
+
+.custom-table .ant-table-thead>tr>th {
+  background-color: #0f2462;
+  /* Set your desired background color */
+  color: white;
+  /* Optional: text color */
+  font-weight: bold;
+}
+
+@media (min-width: 1024px) {
+  .desktop-third-width {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    margin: 0 auto;
+  }
+}
+
+.deposite-tab .css-19kzrtu {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

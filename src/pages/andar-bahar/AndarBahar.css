@@ -1,0 +1,172 @@
+.andar-bahar-page {
+ background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
+}
+
+.card-group-ab {
+  position: absolute;
+  top: 222px; /* Adjust this to position on table */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 2; /* Ensures cards stay above the table */
+}
+
+.andar-bahar-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  height: 65px;
+  width: 45px;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.andar-bahar-card > h6 {
+  font-size: 14px;
+}
+
+.andar-bahar-cat {
+  height: 65px;
+  width: 45px;
+  background-color: black;
+  position: absolute;
+  top: 130px; /* Adjust this to position on table */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 2;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+.andar-bahar-btn {
+  height: 55px;
+  width: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  border: 1px solid white !important;
+  font-size: 20px;
+  box-shadow: none !important;
+}
+
+/* Prevent style changes on focus, active, and hover */
+.andar-bahar-btn:focus,
+.andar-bahar-btn:active,
+.andar-bahar-btn:hover {
+  color: white !important;
+  border: 1px solid white !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.result-card {
+  position: absolute;
+  top: 144px;
+  left: 45%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background-color: rgb(15, 2, 2);
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  height: 65px;
+  width: 45px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.timer-digit {
+  background-color: #ffea07;
+  color: #090909;
+  font-size: 24px;
+  font-weight: bold;
+  width: 20px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: monospace;
+  margin-right: 4px;
+}
+
+.timer-separator {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff; /* You can change this to match the background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.playing-card {
+  height: 65px;
+  width: 45px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  font-family: 'Arial';
+  font-weight: bold;
+  position: relative;
+  border: 1px solid white;
+}
+
+.playing-card .corner {
+  font-size: 22px;
+}
+
+.playing-card .top-left {
+  position: absolute;
+  top: -6px;
+  left: 2px;
+}
+
+.playing-card .bottom-right {
+  position: absolute;
+  bottom: -6px;
+  right: 2px;
+  transform: rotate(180deg);
+}
+
+.playing-card .center {
+  font-size: 24px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playing-card.red {
+  color: red;
+}
+
+.playing-card.black {
+  color: black;
+}
+
+.playing-card {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

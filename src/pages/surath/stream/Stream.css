@@ -1,0 +1,51 @@
+video {
+    width: 100%; /* Fixed width */
+    height: 230px; /* Fixed height */
+    object-fit: cover; /* Ensures the video covers the dimensions without distortion */
+    border: 3px solid red; /* Optional border for styling */
+}
+
+.video-container {
+    width: 100%; /* Match the video width */
+    height: 230px; /* Match the video height */
+    display: inline-block; /* Ensure the container wraps around the video */
+    position: relative; /* For positioning child elements like the live indicator */
+    background: #000; /* Optional background to highlight the video */
+}
+
+.live-indicator {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ae1d1ddb; /* Red color for the badge */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px; /* Position it at the bottom */
+    right: 10px; /* Position it at the right */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Ensure it's above the video */
+}
+
+.live-indicator .dot {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 6px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+}

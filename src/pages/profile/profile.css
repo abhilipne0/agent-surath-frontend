@@ -1,0 +1,14 @@
+.refer-card {
+    background: #6A9113;
+    background: linear-gradient(to left, #141517, #6A9113) !important;
+}
+
+.profile-card {
+    background: #200122;
+    background: linear-gradient(to bottom, #c50909, #060206) !important;
+}
+
+.profile-balance-card {
+    background: #000000;
+    background: linear-gradient(to bottom, #434343, #000000) !important;
+}

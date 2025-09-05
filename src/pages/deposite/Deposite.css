@@ -1,0 +1,18 @@
+.transaction-history {
+    width: 100%;
+    background-color: #F9F9F9;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #f0efeb;
+    margin-bottom: 10px;
+}
+.transaction-circle {
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}

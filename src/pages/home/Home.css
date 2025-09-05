@@ -1,0 +1,388 @@
+
+/* Background */
+.bg-blue {
+  background: #020024;
+background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+/* Buttons */
+.bet-button {
+  background-color: #d7ffd0 !important;
+  border: 2px solid white;
+  font-weight: 600;
+}
+
+.deposite-button {
+  background: linear-gradient(180deg, #007b15, #138e00);
+  border: 1.5px solid #fff !important;
+  font-weight: 700;
+}
+
+.withdrawal-button {
+  background: linear-gradient(180deg, #7b0000, #d10000);
+  border: 1.5px solid #fff !important;
+  font-weight: 700;
+}
+
+/* Scrollable Notifications */
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 3px 0;
+}
+
+.scroll-content {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.scroll-item {
+  padding: 0 20px;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/* Box Grid */
+.box-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 columns */
+  gap: 5px; /* Spacing between boxes */
+  justify-content: center;
+  padding: 10px;
+}
+
+.box {
+  width: 100%; /* Full width of the grid column */
+  height: 40px; /* Fixed height for uniformity */
+  background-color: #f0f0f0; /* Default box color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  text-align: center;
+}
+
+.odd {
+  background-color: rgba(9, 9, 121, 1); /* Style for odd boxes */
+}
+
+.even {
+  background-color: rgb(2, 173, 207); /* Style for even boxes */
+}
+
+/* Box Grid Responsiveness */
+@media (max-width: 768px) {
+  .box-grid {
+      grid-template-columns: repeat(10, 1fr); /* Switch to 5 columns on smaller screens */
+      gap: 3px;
+  }
+  .box {
+      height: 30px; /* Smaller box height on smaller screens */
+  }
+}
+
+
+.col-2 span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.locked {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.693);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock-icon {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Betting Cards Layout & Responsiveness */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns by default */
+  gap: 10px; /* Space between cards */
+  justify-content: center;
+  padding: 10px;
+}
+
+.card-container .card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card-container .card.locked {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card-container .card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.card-container .lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container .lock-icon {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.card-container .bet-amount {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FF0000; /* Red for bet amounts */
+  text-align: center;
+  line-height: 10px;
+  height: 10px;
+}
+
+/* Responsive Layout for Betting Cards */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(6, 1fr); /* 3 columns on small screens */
+    gap: 5px;
+  }
+
+  .card-container .card {
+    height: 100px;
+    width: 100px;
+  }
+
+  .card-container .bet-amount {
+    font-size: 18px; /* Smaller bet amounts on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: repeat(6, 1fr); /* 2 columns on very small screens */
+    gap: 5px;
+  }
+
+  .card-container .card {
+    height: 55px;
+    width: 55px;
+  }
+
+  .card-container .bet-amount {
+    font-size: 10px; /* Even smaller bet amounts */
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(6, 1fr); /* 6 columns on large screens */
+    gap: 15px;
+  }
+
+  .card-container .card {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+/* Responsive Image Handling */
+@media (min-width: 768px) {
+  .titli-mail-box .card img {
+      width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .titli-mail-box .card img {
+      width: 70%;
+  }
+  .box {
+      width: 100%;
+      padding: 5px;
+  }
+}
+
+/* History */
+.history {
+  background-color: #F4EBFF;
+}
+
+.history .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.history .rounded-circle {
+  width: 40px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  background-color: #f0f0f0;
+}
+
+.history img {
+  width: 24px;
+  height: 24px;
+}
+
+.animated-mail {
+  animation: bounce 5s ease-in-out forwards;
+  visibility: visible;
+}
+
+.hidden-mail {
+  visibility: hidden;
+}
+
+.history-circle {
+  width: 100px; /* Diameter of the circle */
+  height: 100px; /* Diameter of the circle */
+  background-color: #3498db; /* Circle color */
+  border-radius: 50%; /* Makes it a perfect circle */
+  display: flex;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  color: white; /* Text color inside the circle */
+  font-size: 16px; /* Font size for text */
+  text-align: center; /* Center-align text */
+}
+
+/* Animation Keyframes */
+@keyframes bounce {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(3);
+  }
+  100% {
+      transform: scale(1);
+      visibility: hidden;
+  }
+}
+
+.winning-amount-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050; /* Ensure it is above other elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Optional: Prevent interaction with this overlay */
+}
+
+.advertise-carousel {
+  height: 200px;
+  border-radius: 20px;
+  margin: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  /* background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); */
+}
+.carousel3 {
+  background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.game-box {
+  flex: 1;
+  height: 160px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  border: 2px solid yellow;
+}
+
+.game-box-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.game-box-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 11, 11, 0.245);
+  border-radius: 10px;
+}
+
+/* Centered button */
+.game-box-button-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Bottom text */
+.game-box-bottom-text {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  background: #ffd000;
+  background: linear-gradient(180deg, rgba(255, 208, 0, 1) 0%, rgba(0, 0, 0, 1) 82%);
+  width: 100%;
+  text-align: center;
+}

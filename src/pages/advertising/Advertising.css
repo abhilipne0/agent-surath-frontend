@@ -1,0 +1,33 @@
+.advertising-wrapper {
+  height: 100vh; /* or any fixed height you want */
+  display: flex;
+  flex-direction: column;
+}
+
+.advertise-upper,
+.advertise-lower {
+  flex: 1; /* This makes each take 50% of parent height */
+}
+
+.advertise-upper {
+  background-color: #1C3887;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+
+.advertise-lower {
+  background: #1B2E82;
+  background: linear-gradient(90deg, rgba(27, 46, 130, 1) 0%, rgba(22, 186, 186, 1) 100%);
+  color: white;
+  padding: 0px 20px;
+}
+
+.vertical-line {
+  position: absolute;
+  top: 20%; /* space from top */
+  bottom: 20%; /* space from bottom */
+  right: 0; /* align right edge */
+  width: 1px;
+  background-color: #ccc; /* or any color you prefer */
+}
