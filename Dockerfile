@@ -4,14 +4,10 @@ FROM node:20-alpine AS build
 WORKDIR /app
 ENV NODE_OPTIONS=--max-old-space-size=2048
 
-# Copy dependency files and install
 COPY package*.json ./
 RUN npm install
 
-# Copy all source files including .env
 COPY . .
-
-# Build the app (reads latest .env values here)
 RUN npm run build
 
 # Step 2: Serve with Nginx

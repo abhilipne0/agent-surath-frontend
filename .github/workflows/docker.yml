@@ -1,4 +1,4 @@
-name: Build and Deploy Surath User
+name: Build and Deploy Agent Surath User
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Create .env file on runner (from GitHub secrets or repo)
+      # Inject .env file from secrets
       - name: Setup .env file
         run: |
           echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> .env
@@ -24,8 +24,9 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/sorath-user:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/sorath-user:latest
+          IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/agent-surath-user:latest
+          docker build -t $IMAGE_NAME .
+          docker push $IMAGE_NAME
 
       - name: Set up SSH
         run: |
@@ -37,17 +38,19 @@ jobs:
       - name: Deploy to VPS
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << EOF
+            IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/agent-surath-user:latest
+
             echo "🔄 Pulling latest Docker image..."
-            docker pull ${{ secrets.DOCKER_USERNAME }}/sorath-user:latest
+            docker pull \$IMAGE_NAME
 
-            echo "🛑 Stopping old container..."
-            docker stop surath-user || true
-            docker rm surath-user || true
+            echo "🛑 Removing old container..."
+            docker stop agent-surath-user || true
+            docker rm agent-surath-user || true
 
-            echo "🚀 Running new container with .env..."
-            docker run -d --name surath-user -p 8080:80 --restart always \
-              --env-file /var/www/surath-user/.env \
-              ${{ secrets.DOCKER_USERNAME }}/sorath-user:latest
+            echo "🚀 Running new container with fresh .env..."
+            docker run -d --name agent-surath-user -p 8080:80 --restart always \
+              --env-file /var/www/agent-surath-user/.env \
+              \$IMAGE_NAME
 
             echo "🔁 Restarting Nginx..."
             sudo systemctl restart nginx
